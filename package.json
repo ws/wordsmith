@@ -5,5 +5,7 @@
   "description": "An opinionated blogging engine.",
   "author": "Will Smidlein <Will@WillSmidlein.com> (http://willsmidlein.com/)",
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {
+    "underscore": "~1.5.2"
+  }
 }
