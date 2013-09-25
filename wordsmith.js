@@ -27,7 +27,7 @@ Wordsmith.prototype = {
 		},
 		get : function(args){
 			helpers.getFile({
-				'file': self.rootDir + '/posts/' + args.slug + self.fileExtension,
+				'file': '../../posts/' + args.slug + self.fileExtension, // Todo: Fix this to use rootDir properly
 				'callback': function(file){
 					if(args.callback){
 						args.callback(file.split('.')[0])
