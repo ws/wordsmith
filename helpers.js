@@ -25,7 +25,7 @@ var helpers = {
 		return (file[0] == '.')
 	},
 	getFile : function(args){
-		fs.readFile('args.file', 'utf8', function (err, data){
+		fs.readFile(args.file, 'utf8', function (err, data){
 			if(err && args.error) args.error(err)
 
 			if(args.callback) args.callback(data)
