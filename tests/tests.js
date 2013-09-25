@@ -45,6 +45,18 @@ describe('Wordsmith', function(){
 		})
 
 	})
+
+	describe('#config', function(){
+
+		describe('#get()', function(){
+			it('should return a value for the specified key', function(){
+
+				a.config.get('abc').should.be.a('string')
+
+			})
+		})
+
+	})
 })
 
 describe('Wordsmith Helpers', function(){

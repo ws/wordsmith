@@ -2,6 +2,7 @@ var self = new Object()
 
 var modules = require('./index.js')
 var helpers = require('./helpers.js')
+var config = require('./config.js')
 
 var _ = modules._
 
@@ -17,11 +18,7 @@ Wordsmith.prototype = {
 				'dir': self.rootDir + '/posts',
 				'ignoreAutoFiles': true,
 				'callback': function(files){
-					if(args.callback){
-						args.callback(_.map(files, function(file){
-							return file.split('.')[0]
-						}))
-					}
+					if(args.callback) args.callback(_.map(files, function(file){ return file.split('.')[0] }))
 				},
 			})
 		},
@@ -29,9 +26,7 @@ Wordsmith.prototype = {
 			helpers.getFile({
 				'file': '../../posts/' + args.slug + self.fileExtension, // Todo: Fix this to use rootDir properly
 				'callback': function(file){
-					if(args.callback){
-						args.callback(file.split('.')[0])
-					}
+					if(args.callback) args.callback(file.split('.')[0])
 				}
 			})
 		}
@@ -42,11 +37,7 @@ Wordsmith.prototype = {
 				'dir': self.rootDir + '/drafts',
 				'ignoreAutoFiles': true,
 				'callback': function(files){
-					if(args.callback){
-						args.callback(_.map(files, function(file){
-							return file.split('.')[0]
-						}))
-					}
+					if(args.callback) args.callback(_.map(files, function(file){ return file.split('.')[0] }))
 				},
 			})
 		},
@@ -54,9 +45,7 @@ Wordsmith.prototype = {
 			helpers.getFile({
 				'file': '../../drafts/' + args.slug + self.fileExtension, // Todo: Fix this to use rootDir properly
 				'callback': function(file){
-					if(args.callback){
-						args.callback(file.split('.')[0])
-					}
+					if(args.callback) args.callback(file.split('.')[0])
 				}
 			})
 		}
